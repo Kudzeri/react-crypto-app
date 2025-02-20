@@ -1,20 +1,14 @@
 import { Divider, Flex, Tag, Typography } from "antd";
+import CoinInfo from "./layout/CoinInfo";
 import React from "react";
 
 const CoinInfoModal = ({ coin }) => {
   return (
     <>
-      <Flex align="center">
-        <img
-          src={coin.icon}
-          alt={coin.name}
-          style={{ width: 40, marginRight: 10 }}
-        />
-        <Typography.Title level={2} style={{ margin: 0 }}>
-          ({coin.symbol}) {coin.name}
-        </Typography.Title>
-      </Flex>
+      <CoinInfo coin={coin} withSymbol/>
+
       <Divider />
+      
       <Typography.Paragraph>
         <Typography.Text strong style={{ paddingRight: 4 }}>
           1 hour:
@@ -38,27 +32,34 @@ const CoinInfoModal = ({ coin }) => {
         </Tag>
       </Typography.Paragraph>
 
-
       <Typography.Paragraph>
-        <Typography.Text strong style={{ paddingRight: 4 }}>Price:</Typography.Text>
+        <Typography.Text strong style={{ paddingRight: 4 }}>
+          Price:
+        </Typography.Text>
         {coin.price.toFixed(2)}$
       </Typography.Paragraph>
 
       <Typography.Paragraph>
-        <Typography.Text strong style={{ paddingRight: 4 }}>Price BTC:</Typography.Text>
+        <Typography.Text strong style={{ paddingRight: 4 }}>
+          Price BTC:
+        </Typography.Text>
         {coin.priceBtc}
       </Typography.Paragraph>
 
       <Typography.Paragraph>
-        <Typography.Text strong style={{ paddingRight: 4 }}>Market Cap:</Typography.Text>
+        <Typography.Text strong style={{ paddingRight: 4 }}>
+          Market Cap:
+        </Typography.Text>
         {coin.marketCap}$
       </Typography.Paragraph>
 
       {coin.contractAddress && (
         <Typography.Paragraph>
-        <Typography.Text strong style={{ paddingRight: 4 }}>Contract Address:</Typography.Text>
-        {coin.contractAddress}
-      </Typography.Paragraph>
+          <Typography.Text strong style={{ paddingRight: 4 }}>
+            Contract Address:
+          </Typography.Text>
+          {coin.contractAddress}
+        </Typography.Paragraph>
       )}
     </>
   );

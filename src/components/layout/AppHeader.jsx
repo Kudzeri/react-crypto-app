@@ -64,7 +64,9 @@ export const AppHeader = () => {
         )}
       />
 
-      <Button type="primary" onClick={() => setDrawer((prev) => !prev)}>Add asset</Button>
+      <Button type="primary" onClick={() => setDrawer((prev) => !prev)}>
+        Add asset
+      </Button>
 
       <Modal
         open={modal}
@@ -76,9 +78,15 @@ export const AppHeader = () => {
         <CoinInfoModal coin={coin} />
       </Modal>
 
-      <Drawer width={600} title="Add a new asset" onClose={() => setDrawer(false)} open={drawer} >
-        <AddAssetForm />
-        </Drawer>
+      <Drawer
+        width={600}
+        title="Add a new asset"
+        onClose={() => setDrawer(false)}
+        open={drawer}
+        destroyOnClose
+      >
+        <AddAssetForm onClose={() => setDrawer(false)}/>
+      </Drawer>
     </Layout.Header>
   );
 };
