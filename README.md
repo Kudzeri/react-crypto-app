@@ -1,8 +1,63 @@
-# React + Vite
+# React Crypto App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
+**React Crypto App** — это веб-приложение для отслеживания криптовалютного портфеля. Пользователь может добавлять активы, просматривать их стоимость и анализировать изменения с помощью графиков.
 
-Currently, two official plugins are available:
+## Функциональность
+- Отображение списка криптовалют с актуальными ценами.
+- Добавление криптовалют в портфель.
+- Автоматический пересчет стоимости активов.
+- График распределения активов в портфеле.
+- Просмотр детальной информации о каждой криптовалюте.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
+- **React** — основа приложения.
+- **Ant Design** — UI-компоненты.
+- **Chart.js** — графики для отображения портфеля.
+- **Context API** — управление состоянием приложения.
+
+## Установка и запуск
+
+### 1. Клонирование репозитория
+```sh
+git clone https://github.com/your-username/react-crypto-app.git
+cd react-crypto-app
+```
+
+### 2. Установка зависимостей
+```sh
+npm install
+```
+
+### 3. Запуск приложения
+```sh
+npm run dev
+```
+
+Приложение будет доступно по адресу `http://localhost:3000/`.
+
+## Структура проекта
+```
+/src
+│── /components
+│   │── AssetsTable.jsx       # Таблица активов
+│   │── CoinInfo.jsx          # Информация о криптовалюте
+│   │── CoinInfoModal.jsx     # Модальное окно с деталями
+│   │── PortfolioChart.jsx    # График портфеля
+│   │── AddAssetForm.jsx      # Форма добавления активов
+│── /context
+│   │── CryptoContext.jsx     # Контекст для управления данными
+│── /data
+│   │── data.js               # Исходные данные
+│── /utils
+│   │── api.js                # Фейковое API
+│── AppContent.jsx            # Основное содержимое приложения
+│── index.js                  # Точка входа
+```
+
+## Автор
+**Kudzeri**  
+Контакт: [GitHub](https://github.com/Kudzeri) 
+
+## Лицензия
+Этот проект распространяется под лицензией MIT.
